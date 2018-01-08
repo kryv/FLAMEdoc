@@ -510,8 +510,8 @@ The basic format of the rf cavity data is similar to the main lattice file,
     * - | **Ez**
       - | vector[2*n]
       - | On axis :math:`E_z` data.
-        | The even index (1,3,5,...) is z position. [mm]
-        | The odd index (2,4,6,...) is Electric field strength. [V/m]
+        | The odd index (1,3,5,...) is z position. [mm]
+        | The even index (2,4,6,...) is Electric field strength. [V/m]
 
 The lattice element for the rf cavity data
 """"""""""""""""""""""""""""""""""""""""""
