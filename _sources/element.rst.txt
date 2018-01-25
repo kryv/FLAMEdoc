@@ -416,7 +416,13 @@ Optical element
 
                  **phi**: float
 
-                    | Synchronous phase of the cavity. [deg]
+                    | Input phase of the cavity. [deg]
+
+                 **fsync**: int
+
+                    | Flag for synchronous phase input (**phi**).
+                    |    **0** for driven phase input. 
+                    |    **1** for synchronous phase input. (default)
 
                  **scl_fac**: float
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lattice File &mdash; FLAME 1.4.0 documentation</title>
+  <title>Lattice File &mdash; FLAME 1.5.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="FLAME 1.4.0 documentation" href="index.html"/>
+    <link rel="top" title="FLAME 1.5.0 documentation" href="index.html"/>
         <link rel="next" title="Class Library" href="classlib.html"/>
         <link rel="prev" title="Tutorial" href="tutorial.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                1.4.0
+                1.5.0
               </div>
             
           
@@ -934,7 +934,17 @@ due to the middle point potential deviation from ground. [1]</div>
 <p><strong>phi</strong>: float</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">Synchronous phase of the cavity. [deg]</div>
+<div class="line">Input phase of the cavity. [deg]</div>
+</div>
+</div></blockquote>
+<p><strong>fsync</strong>: int</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Flag for synchronous phase input (<strong>phi</strong>).</div>
+<div class="line-block">
+<div class="line"><strong>0</strong> for driven phase input.</div>
+<div class="line"><strong>1</strong> for synchronous phase input. (default)</div>
+</div>
 </div>
 </div></blockquote>
 <p><strong>scl_fac</strong>: float</p>
@@ -1290,7 +1300,7 @@ is absolute phase in front of the rf cavity, and <span class="math">\(m\)</span>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.0',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
