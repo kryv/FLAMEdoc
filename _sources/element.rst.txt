@@ -418,7 +418,7 @@ Optical element
 
                     | Input phase of the cavity. [deg]
 
-                 **fsync**: int
+                 **syncflag**: int
 
                     | Flag for synchronous phase input (**phi**).
                     |    **0** for driven phase input. 
