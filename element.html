@@ -215,8 +215,8 @@ keyword2 = &quot;value2&quot;;
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Simulation mode. FRIB simulation uses the particular</div>
-<div class="line">mode “MomentMatrix”.</div>
+<div class="line">Simulation mode. FRIB simulation uses</div>
+<div class="line">the particular mode “MomentMatrix”.</div>
 </div>
 </td>
 </tr>
@@ -335,6 +335,7 @@ keyword2 = [value2, value3]; # list input
 </td>
 <td><div class="first last line-block">
 <div class="line">List of charge to mass ratios of the all charge states. [1]</div>
+<div class="line">The first element is used as the reference beam.</div>
 </div>
 </td>
 </tr>
@@ -505,44 +506,63 @@ USE: name_of_cell;
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>IonChargeStates</strong>: list of float (optional)</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>IonChargeStates</strong>: list of float</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">List of charge to mass ratios after the charge stripper. [1]</div>
 </div>
 </div></blockquote>
-<p><strong>NCharge</strong>: list of float (optional)</p>
+<p><strong>NCharge</strong>: list of float</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">List of macro weights after the charge stripper. [1]</div>
+<div class="line">This list length must be same as the <code class="docutils literal"><span class="pre">IonChargeStates</span></code></div>
 </div>
 </div></blockquote>
-<p><strong>Stripper_E1Para</strong>: float (optional)</p>
+<p><strong>Stripper_IonZ</strong>: float (optional, default is <strong>78.0/238.0</strong>)</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Charge to mass ratio of the reference beam. [1]</div>
+</div>
+</div></blockquote>
+<p><strong>Stripper_IonMass</strong>: float (optional, default is <strong>238.0</strong>)</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Ion mass of the reference beam. [amu]</div>
+</div>
+</div></blockquote>
+<p><strong>Stripper_IonProton</strong>: float (optional, default is <strong>92.0</strong>)</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Proton number of the reference beam. [1]</div>
+</div>
+</div></blockquote>
+<p><strong>Stripper_E1Para</strong>: float (optional, default is <strong>2.8874e-3</strong>)</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Constant part of the energy struggling parameter of the charge stripper. [MeV/u]</div>
 </div>
 </div></blockquote>
-<p><strong>Stripper_lambda</strong>: float (optional)</p>
+<p><strong>Stripper_lambda</strong>: float (optional, default is <strong>5.5740</strong>)</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Momentum spread factor <span class="math">\(\lambda\)</span> of the charge stripper. [1]</div>
 </div>
 </div></blockquote>
-<p><strong>Stripper_upara</strong>: float (optional)</p>
+<p><strong>Stripper_upara</strong>: float (optional, default is <strong>2.6903</strong>)</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Momentum spread factor <span class="math">\(U\)</span> of the charge stripper. [1]</div>
 </div>
 </div></blockquote>
-<p><strong>Stripper_E0Para</strong>: vector[3]</p>
+<p><strong>Stripper_E0Para</strong>: vector[3] (optional, default is <strong>[3.0, 20.0, 16.623e6]</strong>)</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Energy loss parameters due to the ionization.</div>
 <div class="line">[Constant_part, Energy_dependence, Thickness_depenedence] with [eV/u, 1, 1]</div>
 </div>
 </div></blockquote>
-<p><strong>Stripper_Para</strong>: vector[3]</p>
+<p><strong>Stripper_Para</strong>: vector[3] (optional, default is <strong>[16.348e6, 1.00547, -0.10681]</strong>)</p>
 <blockquote class="last">
 <div><div class="line-block">
 <div class="line">Stripper foil parameters.</div>
