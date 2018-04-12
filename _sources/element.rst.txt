@@ -198,6 +198,7 @@ Special element
                  **Stripper_upara**: float (optional, default is **2.6903**)
 
                     | Momentum spread factor :math:`U` of the charge stripper. [1]
+                    | The momentum spread is defined as :math:`\sqrt(U/\lambda^2)` [mrad].
 
                  **Stripper_E0Para**: vector[3] (optional, default is **[3.0, 20.0, 16.623e6]**)
 
