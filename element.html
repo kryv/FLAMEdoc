@@ -512,11 +512,20 @@ USE: name_of_cell;
 <div class="line">List of charge to mass ratios after the charge stripper. [1]</div>
 </div>
 </div></blockquote>
+<p><strong>charge_model</strong>: string</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Macro weight model for stripper.</div>
+<div class="line">- <strong>“baron” (default)</strong>: Use Baron formula for the macro weights.</div>
+<div class="line">- <strong>“off”</strong>: Use <code class="docutils literal"><span class="pre">NCharge</span></code> parameter for the macro weights.</div>
+</div>
+</div></blockquote>
 <p><strong>NCharge</strong>: list of float</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">List of macro weights after the charge stripper. [1]</div>
 <div class="line">This list length must be same as the <code class="docutils literal"><span class="pre">IonChargeStates</span></code></div>
+<div class="line">This parameter is used only in the case of <code class="docutils literal"><span class="pre">charge_model</span> <span class="pre">=</span> <span class="pre">&quot;baron&quot;</span></code>.</div>
 </div>
 </div></blockquote>
 <p><strong>Stripper_IonZ</strong>: float (optional, default is <strong>78.0/238.0</strong>)</p>
