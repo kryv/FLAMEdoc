@@ -277,16 +277,16 @@
 <td>Centroids of the all charge states.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#moment0_env" title="moment0_env"><code class="xref py py-attr docutils literal"><span class="pre">moment0_env</span></code></a></td>
-<td>Total centroid of the all charge states.</td>
+<td>Weighted average of centroids for the all charge states.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#moment0_rms" title="moment0_rms"><code class="xref py py-attr docutils literal"><span class="pre">moment0_rms</span></code></a></td>
-<td>Total rms size of the all charge states.</td>
+<td>Weighted average of rms size for the all charge states.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#moment1" title="moment1"><code class="xref py py-attr docutils literal"><span class="pre">moment1</span></code></a></td>
 <td>Envelope matrixes of the all charge states.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#moment1_env" title="moment1_env"><code class="xref py py-attr docutils literal"><span class="pre">moment1_env</span></code></a></td>
-<td>Total envelope matrixes of the all charge states.</td>
+<td>Weighted average of envelope matrixes for the all charge states.</td>
 </tr>
 </tbody>
 </table>
@@ -435,14 +435,14 @@
 <dl class="attribute">
 <dt id="moment0_env">
 <code class="descname">moment0_env</code><a class="headerlink" href="#moment0_env" title="Permalink to this definition">¶</a></dt>
-<dd><p>Total centroid of  the all charge states.</p>
+<dd><p>Weighted average of centroids for all charge states.</p>
 <p><strong>vector[7]</strong>: <span class="math">\([x, x', y, y', \phi, E_k, 1]\)</span> with [mm, rad, mm, rad, rad, MeV/u, 1].</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="moment0_rms">
 <code class="descname">moment0_rms</code><a class="headerlink" href="#moment0_rms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Total rms size (2nd order moments) of the all charge states.</p>
+<dd><p>Weighted average of rms beam envelopes (2nd order moments) for the all charge states.</p>
 <p><strong>vector[7]</strong>: rms of <span class="math">\([x, x', y, y', \phi, E_k, 1]\)</span> with [mm, rad, mm, rad, rad, MeV/u, 1].</p>
 </dd></dl>
 
@@ -457,7 +457,7 @@
 <dl class="attribute">
 <dt id="moment1_env">
 <code class="descname">moment1_env</code><a class="headerlink" href="#moment1_env" title="Permalink to this definition">¶</a></dt>
-<dd><p>Total envelope matrix of the all charge states.</p>
+<dd><p>Weighted average of envelope matrixes for the all charge states.</p>
 <p><strong>matrix[7,7]</strong>:</p>
 <p>Cartisan product of <span class="math">\([x, x', y, y', \phi, E_k, 1]^2\)</span> with [mm, rad, mm, rad, rad, MeV/u, 1] <span class="math">\(^2\)</span>.</p>
 </dd></dl>
