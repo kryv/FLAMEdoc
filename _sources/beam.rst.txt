@@ -41,7 +41,7 @@ State Class
             * - :py:attr:`ref_SampleIonK`
               - Phase speed [rad]
             * - :py:attr:`last_caviphi0`
-              - Synchronous phase of the last rf cavity [deg]
+              - Driven phase of the last rf cavity [deg]
 
     - **Attributes - actual beam**
 
@@ -125,7 +125,7 @@ State Class
 
     .. py:attribute:: last_caviphi0
 
-        **float**: Synchronous phase of the last rf cavity. [deg]
+        **float**: Driven phase of the last rf cavity. [deg]
 
 
     .. py:attribute:: beta

@@ -973,7 +973,8 @@ due to the middle point potential deviation from ground. [1]</div>
 <div class="line">Flag for synchronous phase input (for above parameter <strong>phi</strong>).</div>
 <div class="line-block">
 <div class="line"><strong>0</strong> for driven phase input.</div>
-<div class="line"><strong>1</strong> for synchronous phase input. (default)</div>
+<div class="line"><strong>1</strong> for synchronous phase input with complex fit model. (default)</div>
+<div class="line"><strong>2</strong> for synchronous phase input with sinusoidal fit model.</div>
 </div>
 </div>
 </div></blockquote>
@@ -1125,6 +1126,63 @@ USE: cell;
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>RefNorm</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">float</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Reference normalization factor for complex synchronous phase definition.</div>
+<div class="line">This value is defined by <span class="math">\(q A/m\)</span> where <span class="math">\(A\)</span> is the scaling factor of the 3D EM field.</div>
+<div class="line">If <strong>RefNorm</strong> or <strong>SyncFit</strong> are not defined, sinusoidal model is used for the synchronous phase definition.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>SyncFit</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">vector[5*n]</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Fitting parameters for complex synchronous phase definition.</div>
+<div class="line">The fitting model is shown <a class="reference internal" href="#ttfnote"><span class="std std-ref">here</span></a>.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>EnergyLimit</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">vector[2]</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Lower and higher limit for incident energy. [MeV]</div>
+<div class="line">This value is used for warning signs only.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>NormLimit</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">vector[2]</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Lower and higher limit for normalization factor.</div>
+<div class="line">This value is used for warning signs only.</div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="section" id="lattice-element-for-the-rf-cavity-data">
@@ -1271,11 +1329,16 @@ TTF factor <span class="math">\(T\)</span> and <span class="math">\(S\)</span> a
 to different particle phase speed <span class="math">\(k\)</span>. <span class="math">\(n\)</span>-th fitting parameter <span class="math">\(p_n\)</span> is listed as,</p>
 <div class="math">
 \[T(k), S(k) = \sum^9_{n=0} p_n k^{(9-n)}.\]</div>
-<p>The driven-phase calculation is also boosted by similar method.
-The phase transferring factor <span class="math">\(\varphi_c\)</span> is fitted by <span class="math">\(p_{i = 0, 1, 2}\)</span></p>
+<p>The driven-phase calculation is also boosted by using fitting model for the energy gain curve.</p>
+<p>For the sinusoidal fitting model, the phase transferring factor <span class="math">\(\varphi_c\)</span> is fitted by using</p>
 <div class="math">
 \[\varphi_c = p_0 E^{p_1} + p_2.\]</div>
-<p>Here, <span class="math">\(E\)</span> is the kinetic energy. The driven phase <span class="math">\(\varphi_d\)</span> is calculated by using <span class="math">\(\varphi_c\)</span>,</p>
+<p>Here, <span class="math">\(E\)</span> is the kinetic energy and <span class="math">\(p_{i = 0, 1, 2}\)</span> are the fitting parameters.</p>
+<p>For other complex models (e.g. peak-base model), the phase transferring factor depends on the normalization factor <span class="math">\(g = q A/m\)</span> where <span class="math">\(A\)</span> is the scaling factor of the 3D EM field. The fitting model for <span class="math">\(\varphi_c\)</span> is,</p>
+<div class="math">
+\[\varphi_c = \sum_{i=0}^n (p_{5i} E^{p_{5i+1}} + p_{5i+2} \ln(E) + p_{5i+3}e^E + p_{5i+4})\times g^i .\]</div>
+<p>Here, user can determine <span class="math">\(n\)</span> value corresponds to the size of <strong>SyncFit</strong>.</p>
+<p>The driven phase <span class="math">\(\varphi_d\)</span> is calculated by using <span class="math">\(\varphi_c\)</span>,</p>
 <div class="math">
 \[\varphi_d = \varphi_s - \varphi_c - m \varphi_\text{abs}\]</div>
 <p class="last">where, <span class="math">\(\varphi_s\)</span> is the synchronous phase in input, <span class="math">\(\varphi_\text{abs}\)</span>
