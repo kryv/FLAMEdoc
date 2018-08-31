@@ -450,16 +450,19 @@ USE: name_of_cell;
 <tr class="row-odd"><td><a class="reference internal" href="#_CPPv210quadrupole" title="quadrupole"><code class="xref cpp cpp-type docutils literal"><span class="pre">quadrupole</span></code></a></td>
 <td>Magnetic quadrupole element.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#_CPPv25equad" title="equad"><code class="xref cpp cpp-type docutils literal"><span class="pre">equad</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#_CPPv29sextupole" title="sextupole"><code class="xref cpp cpp-type docutils literal"><span class="pre">sextupole</span></code></a></td>
+<td>Magnetic sextupole element.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#_CPPv25equad" title="equad"><code class="xref cpp cpp-type docutils literal"><span class="pre">equad</span></code></a></td>
 <td>Electrostatic quadrupole element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#_CPPv25sbend" title="sbend"><code class="xref cpp cpp-type docutils literal"><span class="pre">sbend</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#_CPPv25sbend" title="sbend"><code class="xref cpp cpp-type docutils literal"><span class="pre">sbend</span></code></a></td>
 <td>Magnetic bend element.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#_CPPv27edipole" title="edipole"><code class="xref cpp cpp-type docutils literal"><span class="pre">edipole</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#_CPPv27edipole" title="edipole"><code class="xref cpp cpp-type docutils literal"><span class="pre">edipole</span></code></a></td>
 <td>Electrostatic dipole element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#_CPPv28rfcavity" title="rfcavity"><code class="xref cpp cpp-type docutils literal"><span class="pre">rfcavity</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#_CPPv28rfcavity" title="rfcavity"><code class="xref cpp cpp-type docutils literal"><span class="pre">rfcavity</span></code></a></td>
 <td>RF cavity element.</td>
 </tr>
 </tbody>
@@ -756,6 +759,52 @@ the process order is, beam kick -&gt; transverse rotation. In other words, the b
 <div><div class="line-block">
 <div class="line">Quadrupole field gradient. [T/m]</div>
 <div class="line">Positive value means horizontal focusing.</div>
+</div>
+</div></blockquote>
+<p><strong>dx</strong>, <strong>dy</strong>, <strong>pitch</strong>, <strong>yaw</strong>, <strong>roll</strong>: float</p>
+<blockquote class="last">
+<div><div class="line-block">
+<div class="line">Misalignment parameters. See <a class="reference internal" href="#_CPPv28solenoid" title="solenoid"><code class="xref cpp cpp-type docutils literal"><span class="pre">solenoid</span></code></a> case.</div>
+</div>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv29sextupole">
+<span id="sextupole"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">sextupole</code><a class="headerlink" href="#_CPPv29sextupole" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Magnetic sextupole element.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>L</strong>: float</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Length of the lattice element. [m]</div>
+</div>
+</div></blockquote>
+<p><strong>B3</strong>: float</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Sextupole field gradient. [T/m^2]</div>
+<div class="line">Positive value means horizontal focusing.</div>
+</div>
+</div></blockquote>
+<p><strong>dstkick</strong>: bool</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">On/off flag to calculate the centroid shift due to the 3rd order effect.</div>
+<div class="line">Default is <strong>1</strong> (on).</div>
+</div>
+</div></blockquote>
+<p><strong>step</strong>: int</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Step number for the sextupole element. Default is <strong>1</strong>.</div>
 </div>
 </div></blockquote>
 <p><strong>dx</strong>, <strong>dy</strong>, <strong>pitch</strong>, <strong>yaw</strong>, <strong>roll</strong>: float</p>
