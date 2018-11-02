@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tutorial &mdash; FLAME 1.5.1 documentation</title>
+  <title>Tutorial &mdash; FLAME 1.8.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="FLAME 1.5.1 documentation" href="index.html"/>
+    <link rel="top" title="FLAME 1.8.1 documentation" href="index.html"/>
         <link rel="next" title="Lattice File" href="element.html"/>
         <link rel="prev" title="Installation" href="installation.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                1.5.1
+                1.8.1
               </div>
             
           
@@ -265,14 +265,23 @@
 <div class="section" id="run-for-the-selected-section">
 <h2>3. Run for the selected section<a class="headerlink" href="#run-for-the-selected-section" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/atob.png" src="_images/atob.png" />
-<p>User can input <em>start-point index</em> and <em>end-point index</em> to <a class="reference internal" href="machine.html#Machine.propagate" title="Machine.propagate"><code class="xref py py-func docutils literal"><span class="pre">propagate</span></code></a>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># simulate from 0th to the entrance of 10th element</span>
+<p>User can input <em>start-point index</em> and <em>propagation number</em> to <a class="reference internal" href="machine.html#Machine.propagate" title="Machine.propagate"><code class="xref py py-func docutils literal"><span class="pre">propagate</span></code></a>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># simulate from 0th to 9th element</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S1</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="c1"># clone the beam state</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># simulate from 10th to the last element</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># simulate from 10th to the last element</span>
 </pre></div>
 </div>
 <p>In this case, “S” has the beam state after the 9th element, and
 “S1” has the finite beam state.</p>
+<p>If user input <em>propagation number</em> as negative number, it returns “backward” propagation result.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span> <span class="c1"># forward simulation from 0th to 100th element</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S1</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="c1"># clone the beam state</span>
+</pre></div>
+</div>
+<p>Here, user can change beam state “S1” except the beam energy and the charge state.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># backward simulation from 100th to the first element</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="example-quadrupole-scan">
 <h2>4. Example: Quadrupole scan<a class="headerlink" href="#example-quadrupole-scan" title="Permalink to this headline">¶</a></h2>
@@ -359,7 +368,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.1',
+            VERSION:'1.8.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -369,7 +378,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
