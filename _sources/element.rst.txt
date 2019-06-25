@@ -68,6 +68,9 @@ Basic format of the beam parameters are,
     * - | **IonEk**
       - | float
       - | Initial kinetic energy of the reference beam. [eV/u]
+    * - | **SampleFreq**
+      - | float
+      - | Sampling frequency. [Hz] (default is 80.5e6 [Hz])
     * - | **IonChargeStates**
       - | list of float
       - | List of charge to mass ratios of the all charge states. [1]
@@ -265,7 +268,7 @@ Optical element
     .. Note::
 
         In the case of user puts both "beam kick information" and "transverse rotation angle" to the ONE orbtrim element,
-        the process order is, beam kick -> transverse rotation. In other words, the beam kick is effected BEFORE the transverse rotation.
+        the process order is, transverse rotation -> beam kick. In other words, the beam kick is effected AFTER the transverse rotation.
 
 .. cpp:type:: drift
 
